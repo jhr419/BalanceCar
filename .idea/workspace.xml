@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="BalanceCar" targetName="BalanceCar.elf" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-MinGW_STM32_DEV" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="MinGW_STM32_DEV" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64b92293-9e77-4a73-9852-f61a3c756f05" name="更改" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW_STM32_DEV" />
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.3" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2xl1S3J5q33XBFOXkaCVqZLDLu7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "OpenOCD 下载并运行.BalanceCar.elf.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "E:/WorkFiles/Code/MCU/BalanceCar/cmake-build-debug-mingw_stm32_dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkFiles\Code\MCU\BalanceCar\cmake-build-debug-mingw_stm32_dev" />
+    </key>
+  </component>
+  <component name="RunManager" selected="OpenOCD 下载并运行.BalanceCar.elf">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BalanceCar.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BalanceCar" TARGET_NAME="BalanceCar.elf" CONFIG_NAME="Debug-MinGW_STM32_DEV" RUN_TARGET_PROJECT_NAME="BalanceCar" RUN_TARGET_NAME="BalanceCar.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" PROGRAM_PARAMS="-f interface/stlink.cfg -f target/stm32f4x.cfg" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" version="1">
+      <custom-gdb-server version="1" gdb-connect="localhost:3333" executable="D:\environment config\openOCD\OpenOCD-20230712-0.12.0\bin\openocd.exe" warmup-ms="0" download-type="UPDATED_ONLY" reset-cmd="monitor reset" reset-type="AFTER_DOWNLOAD">
+        <debugger kind="GDB" isBundled="true" />
+      </custom-gdb-server>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BalanceCar.elf" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true" PROGRAM_PARAMS="interface/stlink.cfg -f target/stm32f4x.cfg" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BalanceCar" TARGET_NAME="BalanceCar.elf" CONFIG_NAME="Debug-MinGW_STM32_DEV" version="1" RUN_TARGET_PROJECT_NAME="BalanceCar" RUN_TARGET_NAME="BalanceCar.elf">
+      <custom-gdb-server version="1" gdb-connect="localhost:3333" executable="D:\environment config\openOCD\OpenOCD-20230712-0.12.0\bin\openocd.exe" warmup-ms="0" download-type="UPDATED_ONLY" reset-cmd="monitor reset" reset-type="AFTER_DOWNLOAD">
+        <debugger kind="GDB" isBundled="true" />
+      </custom-gdb-server>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BalanceCar.elf" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BalanceCar" TARGET_NAME="BalanceCar.elf" CONFIG_NAME="Debug-MinGW_STM32_DEV" version="1" RUN_TARGET_PROJECT_NAME="BalanceCar" RUN_TARGET_NAME="BalanceCar.elf">
+      <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="E:\WorkFiles\Code\MCU\BalanceCar\stlink-f401.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+        <debugger toolchainName="MinGW_STM32_DEV" />
+      </openocd>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" version="1">
+      <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="E:\WorkFiles\Code\MCU\stlink-f401.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+        <debugger toolchainName="MinGW_STM32_DEV" />
+      </openocd>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake 应用程序.BalanceCar.elf" />
+      <item itemvalue="OpenOCD 下载并运行.BalanceCar.elf" />
+      <item itemvalue="嵌入式 GDB 服务器.BalanceCar.elf" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="64b92293-9e77-4a73-9852-f61a3c756f05" name="更改" comment="" />
+      <created>1748497842749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748497842749</updated>
+      <workItem from="1748497844666" duration="602000" />
+      <workItem from="1748648900852" duration="259000" />
+      <workItem from="1748675201655" duration="139000" />
+      <workItem from="1748675354359" duration="249000" />
+      <workItem from="1748675711179" duration="236000" />
+      <workItem from="1748675959472" duration="5040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>
