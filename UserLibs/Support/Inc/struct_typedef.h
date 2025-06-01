@@ -1,20 +1,23 @@
 #ifndef STRUCT_TYPEDEF_H
 #define STRUCT_TYPEDEF_H
 
-//ÓÃÓÚ²¹³äÒ»Ğ©¶îÍâÓÃµ½µÄ±äÁ¿ÀàĞÍ£¬Ò»Ğ©³£ÓÃºêº¯Êı
-#define BOOL_TOGGLE(bool) (0 == bool) ? 1 : 0
-#define LIMIT(x, min, max)  ((x) < (min) ? (min) : ((x) > (max) ? (max) : (x)))
+/**
+  * @file    struct_typedef.h
+  * @brief   é€šç”¨ç±»å‹å’Œå®å®šä¹‰ | Common type and macro definitions
+  */
 
-#define TRUE 1
+/* åˆ‡æ¢å¸ƒå°”å€¼ | Toggle boolean value */
+#define BOOL_TOGGLE(bool) ((0 == (bool)) ? 1 : 0)
+
+/* é™åˆ¶ x åœ¨ [min, max] èŒƒå›´å†… | Constrain x within [min, max] */
+#define LIMIT(x, min, max) (((x) < (min)) ? (min) : (((x) > (max)) ? (max) : (x)))
+
+#define TRUE  1
 #define FALSE 0
 
-/* exact-width unsigned integer types */
+/* ç²¾ç¡®å®½åº¦æ•°æ®ç±»å‹ | Exact-width data types */
 typedef unsigned char bool_t;
-typedef float fp32;
-typedef double fp64;
+typedef float         fp32;
+typedef double        fp64;
 
-
-#endif
-
-
-
+#endif /* STRUCT_TYPEDEF_H */

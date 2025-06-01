@@ -1,142 +1,116 @@
 #include "main.h"
 
 #define USE_HAL_LEGACY
-
 #include "stm32_hal_legacy.h"
 
-// Timebase source selection (1 for SysTick, 0 for other timer when using FreeRTOS)
-// 时基源选择（1表示使用SysTick，0表示使用其他定时器，当使用FreeRTOS时）
-//#define Timebase_Source_is_SysTick 1     // Timebase Source is SysTick set to 1
-#define Timebase_Source_is_SysTick 0   // When using FreeRTOS, Timebase Source is not SysTick set to 0
+// 时基源选择：1=SysTick，0=其他定时器（使用FreeRTOS时）
+// Timebase source selection: 1=SysTick, 0=other timer (when using FreeRTOS)
+//#define Timebase_Source_is_SysTick 1
+#define Timebase_Source_is_SysTick 0
 
 #if (!Timebase_Source_is_SysTick)
-extern TIM_HandleTypeDef htim5;      // When using FreeRTOS, Timebase Source is another timer, need to define
-#define Timebase_htim htim5         // 使用FreeRTOS时，时基源为其他定时器，需要定义
+extern TIM_HandleTypeDef htim5;       // 使用FreeRTOS时的定时器句柄 | Timer handle when using FreeRTOS
+#define Timebase_htim htim5
 
-// Macro definitions for timer counter and autoreload value
-// 定时器计数器和自动重装载值的宏定义
-#define Delay_GetCounter()      __HAL_TIM_GetCounter(&Timebase_htim)
-#define Delay_GetAutoreload()   __HAL_TIM_GetAutoreload(&Timebase_htim)
+// 定时器计数器和自动重装载值宏 | Timer counter and autoreload value macros
+#define Delay_GetCounter()    __HAL_TIM_GetCounter(&Timebase_htim)
+#define Delay_GetAutoreload() __HAL_TIM_GetAutoreload(&Timebase_htim)
 #else
-// SysTick counter and reload value macros
-// SysTick计数器和重装载值宏
-#define Delay_GetCounter()      (SysTick->VAL)
-#define Delay_GetAutoreload()   (SysTick->LOAD)
+// SysTick 计数器和重装载值宏 | SysTick counter and reload value macros
+#define Delay_GetCounter()    (SysTick->VAL)
+#define Delay_GetAutoreload() (SysTick->LOAD)
 #endif
 
-// Static variables for delay calculation
-// 用于延时计算的静态变量
-static uint16_t fac_us = 0;   // Microsecond factor 微秒因子
-static uint32_t fac_ms = 0;   // Millisecond factor 毫秒因子
+// 延时因子，fac_us：微秒因子，fac_ms：毫秒因子 | Delay factors: fac_us = microsecond factor, fac_ms = millisecond factor
+static uint16_t fac_us = 0;
+static uint32_t fac_ms = 0;
 
 /**
- * @brief Initialize delay function
- * @brief 初始化延时函数
- */
+  * @brief   初始化延时函数 | Initialize delay functions
+  * @note    根据时基源计算微秒和毫秒因子 | Compute microsecond and millisecond factors based on timebase
+  */
 void delay_init(void) {
 #if (!Timebase_Source_is_SysTick)
-  fac_ms = 1000000;         // Assuming HAL_InitTick() configures timer to 1MHz
-  // 假设HAL_InitTick()将定时器配置为1MHz
-  fac_us = fac_ms / 1000;   // Calculate microsecond factor 计算微秒因子
+    fac_ms = 1000000;           // 假设定时器 1MHz | Assume timer runs at 1MHz
+    fac_us = fac_ms / 1000;     // 计算微秒因子 | Compute microsecond factor
 #else
-  fac_ms = SystemCoreClock / 1000;  // Calculate milliseconds factor based on system clock
-                                    // 根据系统时钟计算毫秒因子
-  fac_us = fac_ms / 1000;          // Calculate microseconds factor 计算微秒因子
+    fac_ms = SystemCoreClock / 1000;  // 根据系统时钟计算毫秒因子 | Compute millisecond factor
+    fac_us = fac_ms / 1000;           // 计算微秒因子 | Compute microsecond factor
 #endif
 }
 
 /**
- * @brief Microsecond delay
- * @brief 微秒延时
- * @param nus Number of microseconds to delay 需要延时的微秒数
- */
+  * @brief   微秒延时 | Delay in microseconds
+  * @param   nus  需要延时的微秒数 | Number of microseconds to delay
+  */
 void delay_us(uint32_t nus) {
-  uint32_t ticks = 0;   // Total ticks needed 需要的总滴答数
-  uint32_t told = 0;    // Previous counter value 上一次计数器值
-  uint32_t tnow = 0;    // Current counter value 当前计数器值
-  uint32_t tcnt = 0;    // Accumulated ticks 累计滴答数
-  uint32_t reload = 0;  // Reload value 重装载值
+    uint32_t ticks = 0;   // 所需滴答数 | Required ticks
+    uint32_t told = 0;    // 上一次计数值 | Previous counter value
+    uint32_t tnow = 0;    // 当前计数值 | Current counter value
+    uint32_t tcnt = 0;    // 累计滴答数 | Accumulated ticks
+    uint32_t reload = 0;  // 自动重装载值 | Autoreload value
 
-  reload = Delay_GetAutoreload();  // Get autoreload value 获取自动重装载值
-  ticks = nus * fac_us;           // Calculate required ticks 计算需要的滴答数
+    reload = Delay_GetAutoreload();      // 获取重装载值 | Get autoreload value
+    ticks = nus * fac_us;                // 计算所需滴答数 | Calculate required ticks
+    told = Delay_GetCounter();           // 获取初始计数 | Get initial counter
 
-  told = Delay_GetCounter();      // Get initial counter value 获取初始计数器值
-
-  while (1) {
-    tnow = Delay_GetCounter();  // Get current counter value 获取当前计数器值
-
-    if (tnow != told)           // If counter has changed 如果计数器发生变化
-    {
-      if (tnow < told)        // Handle overflow condition 处理溢出情况
-      {
-        tcnt += told - tnow;
-      } else {
-        tcnt += reload - tnow + told;
-      }
-      told = tnow;            // Update previous value 更新前一个值
-      if (tcnt >= ticks)      // Check if delay completed 检查延时是否完成
-      {
-        break;
-      }
+    while (1) {
+        tnow = Delay_GetCounter();       // 获取当前计数 | Get current counter
+        if (tnow != told) {              // 若计数变化 | If counter changed
+            if (tnow < told) {           // 处理计数回绕 | Handle overflow
+                tcnt += told - tnow;
+            } else {
+                tcnt += reload - tnow + told;
+            }
+            told = tnow;                 // 更新上次计数 | Update previous value
+            if (tcnt >= ticks) break;    // 达到延时，退出 | Delay complete, exit
+        }
     }
-  }
 }
 
 /**
- * @brief Millisecond delay
- * @brief 毫秒延时
- * @param nms Number of milliseconds to delay 需要延时的毫秒数
- */
+  * @brief   毫秒延时 | Delay in milliseconds
+  * @param   nms  需要延时的毫秒数 | Number of milliseconds to delay
+  */
 void delay_ms(uint32_t nms) {
-  uint32_t ticks = 0;   // Total ticks needed 需要的总滴答数
-  uint32_t told = 0;    // Previous counter value 上一次计数器值
-  uint32_t tnow = 0;    // Current counter value 当前计数器值
-  uint32_t tcnt = 0;    // Accumulated ticks 累计滴答数
-  uint32_t reload = 0;  // Reload value 重装载值
+    uint32_t ticks = 0;   // 所需滴答数 | Required ticks
+    uint32_t told = 0;    // 上一次计数值 | Previous counter value
+    uint32_t tnow = 0;    // 当前计数值 | Current counter value
+    uint32_t tcnt = 0;    // 累计滴答数 | Accumulated ticks
+    uint32_t reload = 0;  // 自动重装载值 | Autoreload value
 
-  reload = Delay_GetAutoreload();  // Get autoreload value 获取自动重装载值
-  ticks = nms * fac_ms;           // Calculate required ticks 计算需要的滴答数
+    reload = Delay_GetAutoreload();      // 获取重装载值 | Get autoreload value
+    ticks = nms * fac_ms;                // 计算所需滴答数 | Calculate required ticks
+    told = Delay_GetCounter();           // 获取初始计数 | Get initial counter
 
-  told = Delay_GetCounter();      // Get initial counter value 获取初始计数器值
-
-  while (1) {
-    tnow = Delay_GetCounter();  // Get current counter value 获取当前计数器值
-
-    if (tnow != told)           // If counter has changed 如果计数器发生变化
-    {
-      if (tnow < told)        // Handle overflow condition 处理溢出情况
-      {
-        tcnt += told - tnow;
-      } else {
-        tcnt += reload - tnow + told;
-      }
-      told = tnow;            // Update previous value 更新前一个值
-      if (tcnt >= ticks)      // Check if delay completed 检查延时是否完成
-      {
-        break;
-      }
+    while (1) {
+        tnow = Delay_GetCounter();       // 获取当前计数 | Get current counter
+        if (tnow != told) {              // 若计数变化 | If counter changed
+            if (tnow < told) {           // 处理计数回绕 | Handle overflow
+                tcnt += told - tnow;
+            } else {
+                tcnt += reload - tnow + told;
+            }
+            told = tnow;                 // 更新上次计数 | Update previous value
+            if (tcnt >= ticks) break;    // 达到延时，退出 | Delay complete, exit
+        }
     }
-  }
 }
 
 /**
- * @brief HAL_Delay override
- * @brief 重写的HAL_Delay函数
- * @param Delay Delay in milliseconds 延时的毫秒数
- */
+  * @brief   重写 HAL_Delay（以与 FreeRTOS 兼容） | Override HAL_Delay (compatible with FreeRTOS)
+  * @param   Delay  延时毫秒数 | Delay in milliseconds
+  */
 void HAL_Delay(uint32_t Delay) {
-  uint32_t tickstart = HAL_GetTick();  // Get start tick 获取开始时刻
-  uint32_t wait = Delay;               // Set wait time 设置等待时间
+    uint32_t tickstart = HAL_GetTick(); // 获取开始时刻 | Get start tick
+    uint32_t wait = Delay;              // 等待时长 | Wait duration
 
-  /* If minimum delay is required, uncomment this section */
-  /* 如果需要最小延时，取消注释此部分 */
-  // if (wait < HAL_MAX_DELAY)
-  // {
-  //     wait += (uint32_t)(uwTickFreq);
-  // }
+    // 若需要最小延时，可启用以下代码 | To enforce minimum delay, uncomment below
+    // if (wait < HAL_MAX_DELAY) {
+    //     wait += (uint32_t)(uwTickFreq);
+    // }
 
-  // Wait until specified time has elapsed
-  // 等待直到指定时间过去
-  while ((HAL_GetTick() - tickstart) < wait) {
-  }
+    while ((HAL_GetTick() - tickstart) < wait) {
+        // 空循环等待 | Busy-wait
+    }
 }

@@ -1,0 +1,2 @@
+../UserLibs/Devices/Src/encoder.c:9:9:newEncoder	1
+../UserLibs/Devices/Src/encoder.c:28:10:GetCountAndRpm	2

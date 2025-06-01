@@ -1,0 +1,187 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"CMakePresetLoader\">{\r\n  &quot;useNewFormat&quot;: true\r\n}</component>\r\n  <component name=\"CMakeProjectFlavorService\">\r\n    <option name=\"flavorId\" value=\"CMakePlainProjectFlavor\" />\r\n  </component>\r\n  <component name=\"CMakeReloadState\">\r\n    <option name=\"reloaded\" value=\"true\" />\r\n  </component>\r\n  <component name=\"CMakeRunConfigurationManager\">\r\n    <generated>\r\n      <config projectName=\"BalanceCar\" targetName=\"BalanceCar.elf\" />\r\n    </generated>\r\n  </component>\r\n  <component name=\"CMakeSettings\" AUTO_RELOAD=\"true\">\r\n    <configurations>\r\n      <configuration PROFILE_NAME=\"Debug-MinGW_STM32_DEV\" ENABLED=\"true\" CONFIG_NAME=\"Debug\" TOOLCHAIN_NAME=\"MinGW_STM32_DEV\" />\r\n    </configurations>\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"64b92293-9e77-4a73-9852-f61a3c756f05\" name=\"更改\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ClangdSettings\">\r\n    <option name=\"formatViaClangd\" value=\"false\" />\r\n  </component>\r\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"CMakeBuildProfile:Debug-MinGW_STM32_DEV\" />\r\n  <component name=\"ProjectApplicationVersion\">\r\n    <option name=\"ide\" value=\"CLion\" />\r\n    <option name=\"majorVersion\" value=\"2023\" />\r\n    <option name=\"minorVersion\" value=\"3.3\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2xl1S3J5q33XBFOXkaCVqZLDLu7\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"OpenOCD 下载并运行.BalanceCar.elf.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\r\n    \"RunOnceActivity.readMode.enableVisualFormatting\": \"true\",\r\n    \"RunOnceActivity.west.config.association.type.startup.service\": \"true\",\r\n    \"cf.first.check.clang-format\": \"false\",\r\n    \"cidr.known.project.marker\": \"true\",\r\n    \"last_opened_file_path\": \"E:/WorkFiles/Code/MCU/BalanceCar/cmake-build-debug-mingw_stm32_dev\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\WorkFiles\\Code\\MCU\\BalanceCar\\cmake-build-debug-mingw_stm32_dev\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"OpenOCD 下载并运行.BalanceCar.elf\">\r\n    <configuration default=\"true\" type=\"CLionExternalRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\">\r\n      <method v=\"2\">\r\n        <option name=\"CLION.EXTERNAL.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BalanceCar.elf\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"BalanceCar\" TARGET_NAME=\"BalanceCar.elf\" CONFIG_NAME=\"Debug-MinGW_STM32_DEV\" RUN_TARGET_PROJECT_NAME=\"BalanceCar\" RUN_TARGET_NAME=\"BalanceCar.elf\">\r\n      <method v=\"2\">\r\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"com.jetbrains.cidr.embedded.customgdbserver.type\" factoryName=\"com.jetbrains.cidr.embedded.customgdbserver.factory\" PROGRAM_PARAMS=\"-f interface/stlink.cfg -f target/stm32f4x.cfg\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\" version=\"1\">\r\n      <custom-gdb-server version=\"1\" gdb-connect=\"localhost:3333\" executable=\"D:\\environment config\\openOCD\\OpenOCD-20230712-0.12.0\\bin\\openocd.exe\" warmup-ms=\"0\" download-type=\"UPDATED_ONLY\" reset-cmd=\"monitor reset\" reset-type=\"AFTER_DOWNLOAD\">\r\n        <debugger kind=\"GDB\" isBundled=\"true\" />\r\n      </custom-gdb-server>\r\n      <method v=\"2\">\r\n        <option name=\"CLION.COMPOUND.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BalanceCar.elf\" type=\"com.jetbrains.cidr.embedded.customgdbserver.type\" factoryName=\"com.jetbrains.cidr.embedded.customgdbserver.factory\" nameIsGenerated=\"true\" PROGRAM_PARAMS=\"interface/stlink.cfg -f target/stm32f4x.cfg\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"BalanceCar\" TARGET_NAME=\"BalanceCar.elf\" CONFIG_NAME=\"Debug-MinGW_STM32_DEV\" version=\"1\" RUN_TARGET_PROJECT_NAME=\"BalanceCar\" RUN_TARGET_NAME=\"BalanceCar.elf\">\r\n      <custom-gdb-server version=\"1\" gdb-connect=\"localhost:3333\" executable=\"D:\\environment config\\openOCD\\OpenOCD-20230712-0.12.0\\bin\\openocd.exe\" warmup-ms=\"0\" download-type=\"UPDATED_ONLY\" reset-cmd=\"monitor reset\" reset-type=\"AFTER_DOWNLOAD\">\r\n        <debugger kind=\"GDB\" isBundled=\"true\" />\r\n      </custom-gdb-server>\r\n      <method v=\"2\">\r\n        <option name=\"CLION.COMPOUND.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BalanceCar.elf\" type=\"com.jetbrains.cidr.embedded.openocd.conf.type\" factoryName=\"com.jetbrains.cidr.embedded.openocd.conf.factory\" nameIsGenerated=\"true\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"BalanceCar\" TARGET_NAME=\"BalanceCar.elf\" CONFIG_NAME=\"Debug-MinGW_STM32_DEV\" version=\"1\" RUN_TARGET_PROJECT_NAME=\"BalanceCar\" RUN_TARGET_NAME=\"BalanceCar.elf\">\r\n      <openocd version=\"1\" gdb-port=\"3333\" telnet-port=\"4444\" board-config=\"E:\\WorkFiles\\Code\\MCU\\BalanceCar\\stlink-f401.cfg\" reset-type=\"INIT\" download-type=\"UPDATED_ONLY\">\r\n        <debugger toolchainName=\"MinGW_STM32_DEV\" />\r\n      </openocd>\r\n      <method v=\"2\">\r\n        <option name=\"CLION.COMPOUND.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"com.jetbrains.cidr.embedded.openocd.conf.type\" factoryName=\"com.jetbrains.cidr.embedded.openocd.conf.factory\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" EMULATE_TERMINAL=\"false\" PASS_PARENT_ENVS_2=\"true\" version=\"1\">\r\n      <openocd version=\"1\" gdb-port=\"3333\" telnet-port=\"4444\" board-config=\"E:\\WorkFiles\\Code\\MCU\\stlink-f401.cfg\" reset-type=\"INIT\" download-type=\"UPDATED_ONLY\">\r\n        <debugger toolchainName=\"MinGW_STM32_DEV\" />\r\n      </openocd>\r\n      <method v=\"2\">\r\n        <option name=\"CLION.COMPOUND.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"CMake 应用程序.BalanceCar.elf\" />\r\n      <item itemvalue=\"OpenOCD 下载并运行.BalanceCar.elf\" />\r\n      <item itemvalue=\"嵌入式 GDB 服务器.BalanceCar.elf\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"64b92293-9e77-4a73-9852-f61a3c756f05\" name=\"更改\" comment=\"\" />\r\n      <created>1748497842749</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1748497842749</updated>\r\n      <workItem from=\"1748497844666\" duration=\"602000\" />\r\n      <workItem from=\"1748648900852\" duration=\"259000\" />\r\n      <workItem from=\"1748675201655\" duration=\"139000\" />\r\n      <workItem from=\"1748675354359\" duration=\"249000\" />\r\n      <workItem from=\"1748675711179\" duration=\"236000\" />\r\n      <workItem from=\"1748675959472\" duration=\"5040000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VCPKGProject\">\r\n    <isAutomaticCheckingOnLaunch value=\"false\" />\r\n    <isAutomaticFoundErrors value=\"true\" />\r\n    <isAutomaticReloadCMake value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6a82da7d3dbc3060abe52572b57b1ab6e3c5da10)
++++ b/.idea/workspace.xml	(date 1748768625126)
+@@ -23,7 +23,9 @@
+     </configurations>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="64b92293-9e77-4a73-9852-f61a3c756f05" name="更改" comment="" />
++    <list default="true" id="64b92293-9e77-4a73-9852-f61a3c756f05" name="更改" comment="Adjusted the format">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -33,6 +35,26 @@
+     <option name="formatViaClangd" value="false" />
+   </component>
+   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW_STM32_DEV" />
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;jhr419&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/jhr419/BalanceCar.git&quot;,
++    &quot;accountId&quot;: &quot;09548b8f-6d0b-46fc-bb53-d4c5b53fc4dd&quot;
++  }
++}</component>
+   <component name="ProjectApplicationVersion">
+     <option name="ide" value="CLion" />
+     <option name="majorVersion" value="2023" />
+@@ -46,37 +68,34 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "OpenOCD 下载并运行.BalanceCar.elf.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.cidr.known.project.marker": "true",
+-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+-    "RunOnceActivity.west.config.association.type.startup.service": "true",
+-    "cf.first.check.clang-format": "false",
+-    "cidr.known.project.marker": "true",
+-    "last_opened_file_path": "E:/WorkFiles/Code/MCU/BalanceCar/cmake-build-debug-mingw_stm32_dev",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;OpenOCD 下载并运行.BalanceCar.elf.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
++    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
++    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;ClionVersion&quot;,
++    &quot;last_opened_file_path&quot;: &quot;E:/WorkFiles/Code/MCU/BalanceCar/cmake-build-debug-mingw_stm32_dev&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="E:\WorkFiles\Code\MCU\BalanceCar\cmake-build-debug-mingw_stm32_dev" />
+     </key>
+   </component>
+   <component name="RunManager" selected="OpenOCD 下载并运行.BalanceCar.elf">
+-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+-      <method v="2">
+-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration name="BalanceCar.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BalanceCar" TARGET_NAME="BalanceCar.elf" CONFIG_NAME="Debug-MinGW_STM32_DEV" RUN_TARGET_PROJECT_NAME="BalanceCar" RUN_TARGET_NAME="BalanceCar.elf">
+       <method v="2">
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+@@ -116,8 +135,8 @@
+     </configuration>
+     <list>
+       <item itemvalue="CMake 应用程序.BalanceCar.elf" />
+-      <item itemvalue="OpenOCD 下载并运行.BalanceCar.elf" />
+       <item itemvalue="嵌入式 GDB 服务器.BalanceCar.elf" />
++      <item itemvalue="OpenOCD 下载并运行.BalanceCar.elf" />
+     </list>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+@@ -133,8 +152,45 @@
+       <workItem from="1748675201655" duration="139000" />
+       <workItem from="1748675354359" duration="249000" />
+       <workItem from="1748675711179" duration="236000" />
+-      <workItem from="1748675959472" duration="5040000" />
++      <workItem from="1748675959472" duration="9522000" />
++      <workItem from="1748709179903" duration="131000" />
++      <workItem from="1748711543493" duration="13460000" />
++      <workItem from="1748761792522" duration="157000" />
++      <workItem from="1748768623763" duration="2000" />
++    </task>
++    <task id="LOCAL-00001" summary="Built the Clion version">
++      <option name="closed" value="true" />
++      <created>1748682900245</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1748682900245</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Completed code refactoring. &quot;Grace is a lifelong pursuit.&quot;">
++      <option name="closed" value="true" />
++      <created>1748750658923</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1748750658923</updated>
++    </task>
++    <task id="LOCAL-00003" summary="Adjusted the format">
++      <option name="closed" value="true" />
++      <created>1748751600160</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1748751600160</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Adjusted the format">
++      <option name="closed" value="true" />
++      <created>1748753173125</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1748753173125</updated>
+     </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -145,4 +201,21 @@
+     <isAutomaticFoundErrors value="true" />
+     <isAutomaticReloadCMake value="true" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Built the Clion version" />
++    <MESSAGE value="Completed code refactoring. &quot;Grace is a lifelong pursuit.&quot;" />
++    <MESSAGE value="Adjusted the format" />
++    <option name="LAST_COMMIT_MESSAGE" value="Adjusted the format" />
++  </component>
+ </project>
+\ No newline at end of file

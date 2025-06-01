@@ -1,0 +1,2 @@
+../UserLibs/Devices/Src/potentiometers.c:15:6:ADC_Start	1
+../UserLibs/Devices/Src/potentiometers.c:25:6:HAL_ADC_ConvCpltCallback	1

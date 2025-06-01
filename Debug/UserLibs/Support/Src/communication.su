@@ -1,0 +1,5 @@
+../UserLibs/Support/Src/communication.c:15:6:uart_SendMsg	24	static
+../UserLibs/Support/Src/communication.c:26:6:uart_printf	20	static
+../UserLibs/Support/Src/communication.c:43:6:UART_IdleCallback	24	static
+../UserLibs/Support/Src/communication.c:70:6:USART2_IRQHandler	16	static
+../UserLibs/Support/Src/communication.c:83:6:USART6_IRQHandler	16	static

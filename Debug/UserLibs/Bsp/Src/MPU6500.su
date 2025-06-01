@@ -1,0 +1,5 @@
+../UserLibs/Bsp/Src/MPU6500.c:12:23:inv_row_2_scale	24	static
+../UserLibs/Bsp/Src/MPU6500.c:31:23:inv_orientation_matrix_to_scalar	24	static
+../UserLibs/Bsp/Src/MPU6500.c:41:12:run_self_test	48	static
+../UserLibs/Bsp/Src/MPU6500.c:66:5:MPU_6500_Init	16	static
+../UserLibs/Bsp/Src/MPU6500.c:129:1:MPU6500_DMP_Get_Data	96	static
