@@ -1,0 +1,4 @@
+../UserLibs/Devices/Src/car.c:16:5:newCar	360	static
+../UserLibs/Devices/Src/car.c:77:5:MotorPidCalc	8	static
+../UserLibs/Devices/Src/car.c:95:6:checkMotionCommand	8	static
+../UserLibs/Devices/Src/car.c:180:6:CarMove	32	static

@@ -1,0 +1,2 @@
+../UserLibs/Devices/Src/motor.c:8:7:newMotor	64	static
+../UserLibs/Devices/Src/motor.c:26:6:Move	24	static
