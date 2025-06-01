@@ -4,13 +4,12 @@
 #include <stdint.h>
 
 /*中文字符字节宽度*/
-#define OLED_CHN_CHAR_WIDTH			3		//UTF-8编码格式给3，GB2312编码格式给2
+#define OLED_CHN_CHAR_WIDTH      3    //UTF-8编码格式给3，GB2312编码格式给2
 
 /*字模基本单元*/
-typedef struct 
-{
-	char Index[OLED_CHN_CHAR_WIDTH + 1];	//汉字索引
-	uint8_t Data[32];						//字模数据
+typedef struct {
+    char Index[OLED_CHN_CHAR_WIDTH + 1];  //汉字索引
+    uint8_t Data[32];            //字模数据
 } ChineseCell_t;
 
 /*ASCII字模数据声明*/

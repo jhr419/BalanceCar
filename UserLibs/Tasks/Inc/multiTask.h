@@ -1,5 +1,5 @@
-#ifndef _MULTITASK_H_
-#define _MULTITASK_H_
+#ifndef MULTITASK_H_
+#define MULTITASK_H_
 
 #include "main.h"
 

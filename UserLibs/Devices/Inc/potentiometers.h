@@ -1,5 +1,5 @@
-#ifndef SUDA_POTENTIOMETERS_H
-#define SUDA_POTENTIOMETERS_H
+#ifndef POTENTIOMETERS_H
+#define POTENTIOMETERS_H
 
 #include "main.h"
 #include "adc.h"

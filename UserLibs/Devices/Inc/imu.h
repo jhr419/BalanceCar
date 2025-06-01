@@ -1,5 +1,5 @@
-#ifndef _IMU_H_
-#define _IMU_H_
+#ifndef IMU_H_
+#define IMU_H_
 
 #include "main.h"
 #include "MPU6500.h"

@@ -1,5 +1,5 @@
-#ifndef _ENCODER_H_
-#define _ENCODER_H_
+#ifndef ENCODER_H_
+#define ENCODER_H_
 
 #include "main.h"
 #include "tim.h"
