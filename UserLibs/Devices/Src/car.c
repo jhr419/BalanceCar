@@ -79,7 +79,7 @@ int MotorPidCalc() {
   car.targetAngularSpeed = LIMIT(car.targetAngularSpeed, -5000, 5000);
 
   Velocity_out = VelocityPidCalc(car.targetLinearSpeed, car.encoder_l.rpm, car.encoder_r.rpm);
-  Vertical_out = VerticalPidCalc(Velocity_out + MECHANICAL_BALANCE_BIAS, car.imu.roll, car.imu.gyrox);
+  Vertical_out = VerticalPidCalc(Velocity_out + car.balanceBias, car.imu.roll, car.imu.gyrox);
   Turn_out = Turn(car.targetAngularSpeed);
   PWM_out = Vertical_out;
   return PWM_out;
@@ -90,45 +90,42 @@ void checkMotionCommand() {
 
   switch (car.cmd) {
     case CMD_STOP:
-//      car.speedTrend = SPEED_CONSTANT;
       car.targetLinearSpeed = 0;
       car.targetAngularSpeed = 0;
       break;
     case CMD_FORWARD:
-      car.motionState = CAR_MOTION_FOWARD;
       //发送前进指令的情况下，可能是从非前进到前进状态，也可能是前进已经在运行（此时无需执行多余命令）
       car.targetLinearSpeed = (int8_t) car.targetStartLinearSpeed;
+      car.motionState = CAR_MOTION_FOWARD;
       break;
     case CMD_BACKWARD:
-      car.motionState = CAR_MOTION_BACKWARD;
       car.targetLinearSpeed = (int8_t)-car.targetStartLinearSpeed;
+      car.motionState = CAR_MOTION_BACKWARD;
     case CMD_LEFT:
-      car.motionState = CAR_MOTION_LEFT;
       car.targetAngularSpeed = -3000;
+      car.motionState = CAR_MOTION_LEFT;
       break;
     case CMD_RIGHT:
-      car.motionState = CAR_MOTION_RIGHT;
       car.targetAngularSpeed = 3000;
+      car.motionState = CAR_MOTION_RIGHT;
       break;
     case CMD_SPEED_UP:
       if(car.motionState == CAR_MOTION_FOWARD){
-        car.cmd = CMD_SPEED_CONSTANT;
         car.targetLinearSpeed += 1;
       }
       else if(car.motionState == CAR_MOTION_BACKWARD){
-        car.cmd = CMD_SPEED_CONSTANT;
         car.targetLinearSpeed -= 1;
       }
+      car.cmd = CMD_SPEED_CONSTANT;
       break;
     case CMD_SPEED_DOWN:
       if(car.motionState == CAR_MOTION_FOWARD){
         if(car.targetLinearSpeed > 2) car.targetLinearSpeed -= 2;
-        car.cmd = CMD_SPEED_CONSTANT;
       }
       else if(car.motionState == CAR_MOTION_BACKWARD){
         if (car.targetLinearSpeed < -2) car.targetLinearSpeed += 2;
-        car.cmd = CMD_SPEED_CONSTANT;
       }
+      car.cmd = CMD_SPEED_CONSTANT;
       break;
     case CMD_STOP_SLOWLY:
       if(car.targetLinearSpeed >= 4) car.targetLinearSpeed -= 1;

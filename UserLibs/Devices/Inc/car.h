@@ -28,28 +28,7 @@
 #define ENCODER_L_TIM htim3
 #define ENCODER_R_TIM htim1
 
-// 定义平衡角度 PID 和速度 PID 的参数
-// Define PID parameters for angle and velocity control
-#define PID_A_P 3000.0f//2800.0f
-#define PID_A_I  0.0f
-#define PID_A_D  0.0f //1200.0f
-
-#define PID_L_P  2800.0f
-#define PID_L_I  50.0f
-#define PID_L_D  0.0f
-
-#define PID_R_P  2800.0f
-#define PID_R_I  50.0f
-#define PID_R_D  0.0f
-
-
 #define MECHANICAL_BALANCE_BIAS (-3.4f)
-
-#define V_MAX_OUT  33000.0f
-#define V_MAX_IOUT 6000.0f
-
-#define A_MAX_OUT  30000.0f
-#define A_MAX_IOUT 6000.0f
 
 typedef enum {
     CAR_MOTION_STOP=0,
