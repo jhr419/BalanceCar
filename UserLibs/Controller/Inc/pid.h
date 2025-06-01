@@ -1,41 +1,12 @@
-#ifndef PID_H
-#define PID_H
+#ifndef PID2_H_
+#define PID2_H_
 
 #include "main.h"
 
-enum PID_MODE
-{
-    PID_POSITION = 0,
-    PID_DELTA
-};
+int VerticalPidCalc(float Med, float Angle, float gyro_Y);
 
-typedef struct
-{
-    uint8_t mode;
-    
-    float Kp;
-    float Ki;
-    float Kd;
+int VelocityPidCalc(int Target, int encoder_left, int encoder_right);
 
-    float max_out;  
-    float max_iout; 
-
-    float set;
-    float fdb;
-
-    float out;
-    float Pout;
-    float Iout;
-    float Dout;
-    float Dbuf[3];  
-    float error[3]; 
-
-} pid_t;
-
-extern void PID_init(pid_t *pid, uint8_t mode, const float PID[3], float max_out, float max_iout);
-
-extern float PID_calc(pid_t *pid, float ref, float set);
-
-extern void PID_clear(pid_t *pid);
+int Turn(int gyro_Z);
 
 #endif

@@ -1,80 +1,47 @@
 #include "pid.h"
 
-#define LimitMax(input, max)   \
-    {                          \
-        if (input > max)       \
-        {                      \
-            input = max;       \
-        }                      \
-        else if (input < -max) \
-        {                      \
-            input = -max;      \
-        }                      \
-    }
+#define V_Kp (-0.6f)
 
-void PID_init(pid_t *pid, uint8_t mode, const float PID[3], float max_out, float max_iout)
-{
-    if (pid == NULL || PID == NULL)
-    {
-        return;
-    }
-    pid->mode = mode;
-    pid->Kp = PID[0];
-    pid->Ki = PID[1];
-    pid->Kd = PID[2];
-    pid->max_out = max_out;
-    pid->max_iout = max_iout;
-    pid->Dbuf[0] = pid->Dbuf[1] = pid->Dbuf[2] = 0.0f;
-    pid->error[0] = pid->error[1] = pid->error[2] = pid->Pout = pid->Iout = pid->Dout = pid->out = 0.0f;
+float
+        Vertical_Kp = 5000.0f * 0.6,
+        Vertical_Kd = 1000.0f * 0.6;
+float
+        Velocity_Kp = V_Kp,
+        Velocity_Ki = V_Kp / 200.0f;   // 速度环Kp、Ki（正反馈）
+float
+        Turn_Kp = -1.0f;
+
+int VerticalPidCalc(float Med, float Angle, float gyro) {
+  int PWM_out;
+
+  PWM_out = Vertical_Kp * (Angle - Med) + Vertical_Kd * (gyro);
+
+  return PWM_out;
 }
 
-float PID_calc(pid_t *pid, float ref, float set)
-{
-    if (pid == NULL)
-    {
-        return 0.0f;
-    }
+int VelocityPidCalc(int Target, int encoder_left, int encoder_right) {
+  // 定义成静态变量，保存在静态存储器，使得变量不丢掉
+  static int PWM_out, Encoder_Err, Encoder_S, EnC_Err_Lowout, EnC_Err_Lowout_last;
+  float a = 0.7;
 
-    pid->error[2] = pid->error[1];
-    pid->error[1] = pid->error[0];
-    pid->set = set;
-    pid->fdb = ref;
-    pid->error[0] = set - ref;
-    if (pid->mode == PID_POSITION)
-    {
-        pid->Pout = pid->Kp * pid->error[0];
-        pid->Iout += pid->Ki * pid->error[0];
-        pid->Dbuf[2] = pid->Dbuf[1];
-        pid->Dbuf[1] = pid->Dbuf[0];
-        pid->Dbuf[0] = (pid->error[0] - pid->error[1]);
-        pid->Dout = pid->Kd * pid->Dbuf[0];
-        LimitMax(pid->Iout, pid->max_iout);
-        pid->out = pid->Pout + pid->Iout + pid->Dout;
-        LimitMax(pid->out, pid->max_out);
-    }
-    else if (pid->mode == PID_DELTA)
-    {
-        pid->Pout = pid->Kp * (pid->error[0] - pid->error[1]);
-        pid->Iout = pid->Ki * pid->error[0];
-        pid->Dbuf[2] = pid->Dbuf[1];
-        pid->Dbuf[1] = pid->Dbuf[0];
-        pid->Dbuf[0] = (pid->error[0] - 2.0f * pid->error[1] + pid->error[2]);
-        pid->Dout = pid->Kd * pid->Dbuf[0];
-        pid->out += pid->Pout + pid->Iout + pid->Dout;
-        LimitMax(pid->out, pid->max_out);
-    }
-    return pid->out;
+  Encoder_Err = ((encoder_left + encoder_right) / 2.0f - Target);
+
+  EnC_Err_Lowout = (1 - a) * Encoder_Err + a * EnC_Err_Lowout_last; // 使得波形更加平滑，滤除高频干扰，放置速度突变
+  EnC_Err_Lowout_last = EnC_Err_Lowout;   // 防止速度过大影响直立环的正常工作
+
+  Encoder_S += EnC_Err_Lowout;
+
+  Encoder_S = Encoder_S > 15000 ? 15000 : (Encoder_S < (-15000) ? (-15000) : Encoder_S);
+
+  PWM_out = Velocity_Kp * EnC_Err_Lowout + Velocity_Ki * Encoder_S;
+
+  return PWM_out;
 }
 
-void PID_clear(pid_t *pid)
-{
-    if (pid == NULL)
-    {
-        return;
-    }
+int Turn(int gyro_Z) {
+  int PWM_out;
 
-    pid->error[0] = pid->error[1] = pid->error[2] = 0.0f;
-    pid->Dbuf[0] = pid->Dbuf[1] = pid->Dbuf[2] = 0.0f;
-    pid->out = pid->Pout = pid->Iout = pid->Dout = 0.0f;
-    pid->fdb = pid->set = 0.0f;
+  PWM_out = (int) Turn_Kp * gyro_Z;
+
+  return PWM_out;
 }

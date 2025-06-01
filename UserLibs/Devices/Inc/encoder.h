@@ -12,10 +12,10 @@ struct Encoder{
 	uint16_t count;
 	uint16_t last_count;
 	float rpm;
-	uint16_t (*GetCount)(Encoder* self);
+	uint16_t (*GetCountAndRpm)(Encoder* self);
 };
 
 Encoder newEncoder(TIM_HandleTypeDef *htim,	uint32_t Channel);
-uint16_t GetCount(Encoder* self);
+uint16_t GetCountAndRpm(Encoder* self);
 int16_t GetRPM(Encoder* self);
 #endif

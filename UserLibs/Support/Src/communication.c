@@ -42,7 +42,7 @@ void UART_IdleCallback(UART_HandleTypeDef* huart){
 		
 		uint16_t rx_len = huart->RxXferSize - huart->RxXferCount;
 
-		if(!car.isBarrier)
+		if(!car.isObstacleDetected)
 			car.cmd = rx_data_buffer6[0];
 		
 //		uart_printf(&huart_pc,"%d", car.cmd);

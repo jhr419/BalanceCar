@@ -68,10 +68,9 @@ list(APPEND SOURCES
         UserLibs/Bsp/Src/OLED.c
         UserLibs/Bsp/Src/OLED_Data.c
         UserLibs/Controller/Src/pid.c
-        UserLibs/Controller/Src/pid2.c
         UserLibs/Devices/Src/car.c
         UserLibs/Devices/Src/encoder.c
-        UserLibs/Devices/Src/hc-sr04.c
+        UserLibs/Devices/Src/exti_devices.c
         UserLibs/Devices/Src/imu.c
         UserLibs/Devices/Src/motor.c
         UserLibs/Devices/Src/potentiometers.c

@@ -5,6 +5,6 @@
 #include "adc.h"
 #include <stdio.h>
 
-void ADC_init(void);
+void ADC_Start(void);
 
 #endif

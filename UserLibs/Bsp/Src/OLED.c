@@ -1,27 +1,15 @@
 #include "main.h"
 #include "OLED.h"
-#include <string.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdarg.h>
 
-// 如果用到中文，编译器附加选项需要加 --no-multibyte-chars  (用AC6编译器的不用加)
-
-/*
-选择OLED驱动方式，默认使用硬件I2C。如果要用软件I2C就将硬件I2C那行的宏定义注释掉，将软件I2C那行的注释取消。
-不能同时两个都同时取消注释！
-在stm32cubemx中初始化时需要将SCL和SDA引脚的"user lable"分别设置为I2C3_SCL和I2C3_SDA。
-*/
-//#define OLED_USE_HW_I2C	// 硬件I2C
 #define OLED_USE_SW_I2C	// 软件I2C
 
-/*引脚定义，可在此处修改I2C通信引脚*/
 #define OLED_SCL            I2C3_SCL_Pin // SCL
 #define OLED_SDA            I2C3_SDA_Pin // SDA
 #define OLED_SCL_GPIO_Port  I2C3_SCL_GPIO_Port
 #define OLED_SDA_GPIO_Port  I2C3_SDA_GPIO_Port
-
-/*STM32G474芯片的硬件I2C3: PA8 -- SCL; PC9 -- SDA */
 
 #ifdef OLED_USE_HW_I2C
 /*I2C接口，定义OLED屏使用哪个I2C接口*/

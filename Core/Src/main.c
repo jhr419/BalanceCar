@@ -28,18 +28,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "motor.h"
-#include "encoder.h"
-
-
-#include <string.h>
-#include <stdio.h>
 #include "delay.h"
-#include "MPU6500.h"
-#include "imu.h"
 #include "car.h"
 #include "communication.h"
-#include "OLED.h"
 #include "potentiometers.h"
 /* USER CODE END Includes */
 
@@ -87,7 +78,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -120,20 +111,20 @@ int main(void)
   MX_TIM11_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
+
   delay_init();
-	
   OLED_Init();
-	
-//  ADC_init();
+  ADC_Start();
   car = newCar();
+
   HAL_TIM_Base_Start_IT(&htim9);
   HAL_TIM_Base_Start_IT(&htim10);
-  
+
   __HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE);
   __HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
   HAL_UART_Receive_DMA(&huart2, rx_data_buffer2, BUF_SIZE);
   HAL_UART_Receive_DMA(&huart6, rx_data_buffer6, BUF_SIZE);
-	
+
 
   /* USER CODE END 2 */
 
@@ -153,7 +144,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	}
+  }
   /* USER CODE END 3 */
 }
 
@@ -191,7 +182,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -224,17 +215,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     HAL_IncTick();
   }
-  /* USER CODE BEGIN Callback 1 */
-	
-	else if (htim == &htim9) //计算转速10ms
+    /* USER CODE BEGIN Callback 1 */
+
+  else if (htim == &htim9) //计算转速10ms
   {
-    car.encoder_l.GetCount(&car.encoder_l);
-    car.encoder_r.GetCount(&car.encoder_r);
+    car.encoder_l.GetCountAndRpm(&car.encoder_l);
+    car.encoder_r.GetCountAndRpm(&car.encoder_r);
   }
-   else if (htim == &htim11){
-	car.cmd = CMD_STOP;
-	car.isBarrier = 0;
-	HAL_TIM_Base_Stop_IT(&htim11);
+  else if (htim == &htim11){
+    car.cmd = CMD_STOP;
+    car.isObstacleDetected = 0;
+    HAL_TIM_Base_Stop_IT(&htim11);
   }
   /* USER CODE END Callback 1 */
 }
