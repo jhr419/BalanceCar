@@ -1,0 +1,52 @@
+balancecar\calibrate_angle.o: ..\UserLibs\Algorithm\Src\calibrate_angle.c
+balancecar\calibrate_angle.o: ..\UserLibs\Algorithm\Inc\calibrate_angle.h
+balancecar\calibrate_angle.o: ../Core/Inc/main.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+balancecar\calibrate_angle.o: ../Core/Inc/stm32f4xx_hal_conf.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Include/core_cm4.h
+balancecar\calibrate_angle.o: D:\engineering software\keil5\keil5 5.24\ARM\ARMCC\Bin\..\include\stdint.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Include/cmsis_version.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Include/cmsis_compiler.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Include/cmsis_armcc.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Include/mpu_armv7.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+balancecar\calibrate_angle.o: D:\engineering software\keil5\keil5 5.24\ARM\ARMCC\Bin\..\include\stddef.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+balancecar\calibrate_angle.o: C:/Users/TH/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+balancecar\calibrate_angle.o: ..\UserLibs\Devices\Inc\car.h
+balancecar\calibrate_angle.o: ..\UserLibs\Devices\Inc\motor.h
+balancecar\calibrate_angle.o: D:\engineering software\keil5\keil5 5.24\ARM\ARMCC\Bin\..\include\stdio.h
+balancecar\calibrate_angle.o: D:\engineering software\keil5\keil5 5.24\ARM\ARMCC\Bin\..\include\stdlib.h
+balancecar\calibrate_angle.o: ../Core/Inc/tim.h
+balancecar\calibrate_angle.o: ..\UserLibs\Support\Inc\struct_typedef.h
+balancecar\calibrate_angle.o: ..\UserLibs\Devices\Inc\encoder.h
+balancecar\calibrate_angle.o: ..\UserLibs\Devices\Inc\imu.h
+balancecar\calibrate_angle.o: ..\UserLibs\Bsp\Inc\MPU6500.h
+balancecar\calibrate_angle.o: ..\UserLibs\Bsp\Inc\oled.h
+balancecar\calibrate_angle.o: ..\UserLibs\Bsp\Inc\OLED_Data.h
+balancecar\calibrate_angle.o: ..\UserLibs\Controller\Inc\pid.h
+balancecar\calibrate_angle.o: ..\UserLibs\Algorithm\Inc\filter.h
