@@ -12,9 +12,10 @@ Motor newMotor(Motor_InitTypeDef Init) {
     m.setRPM = MOTOR_MIN_RPM;        // 初始转速最小 | default RPM = MOTOR_MIN_RPM
     m.Move = Move;                   // 绑定 Move 函数 | bind Move function
 
-    HAL_TIM_PWM_Start(Init.htim, Init.Channel);  // 启动 PWM | start PWM on channel
+    HAL_TIM_PWM_Start(Init.htim, Init.IN1_Channel);  // 启动 PWM | start PWM on channel
+    HAL_TIM_PWM_Start(Init.htim, Init.IN2_Channel);  // 启动 PWM | start PWM on channel
 
-    return m;                        // 返回实例 | return instance
+  return m;                        // 返回实例 | return instance
 }
 
 /**
@@ -25,30 +26,25 @@ Motor newMotor(Motor_InitTypeDef Init) {
   */
 void Move(Motor *self, uint8_t isBrake, int32_t setRPM) {
     if (isBrake) {
-        // 刹车：IN1、IN2 都高 | Brake: IN1/IN2 high
-        HAL_GPIO_WritePin(self->Init.IN1_GPIOx, self->Init.IN1_GPIO_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(self->Init.IN2_GPIOx, self->Init.IN2_GPIO_Pin, GPIO_PIN_SET);
+      __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN1_Channel, self->Init.MAX_Counter);
+      __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN2_Channel, self->Init.MAX_Counter);
         self->direction = BRAKE;     // 方向设为刹车 | set direction BRAKE
     } else {
         if (setRPM > 0) {
-            // 正转：IN1 高、IN2 低 | Forward: IN1 high, IN2 low
-            HAL_GPIO_WritePin(self->Init.IN1_GPIOx, self->Init.IN1_GPIO_Pin, GPIO_PIN_SET);
-            HAL_GPIO_WritePin(self->Init.IN2_GPIOx, self->Init.IN2_GPIO_Pin, GPIO_PIN_RESET);
-            self->direction = FORWARD; // 设置方向前进 | set direction FORWARD
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN1_Channel, 0);
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN2_Channel, abs(setRPM));
+          self->direction = FORWARD; // 设置方向前进 | set direction FORWARD
         } else if (setRPM < 0) {
             // 反转：IN1 低、IN2 高 | Reverse: IN1 low, IN2 high
-            HAL_GPIO_WritePin(self->Init.IN1_GPIOx, self->Init.IN1_GPIO_Pin, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(self->Init.IN2_GPIOx, self->Init.IN2_GPIO_Pin, GPIO_PIN_SET);
-            self->direction = BACKWARD; // 设置方向后退 | set direction BACKWARD
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN1_Channel, abs(setRPM));
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN2_Channel, 0);
+          self->direction = BACKWARD; // 设置方向后退 | set direction BACKWARD
         } else {
             // 停止：IN1、IN2 都低 | Stop: IN1/IN2 low
-            HAL_GPIO_WritePin(self->Init.IN1_GPIOx, self->Init.IN1_GPIO_Pin, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(self->Init.IN2_GPIOx, self->Init.IN2_GPIO_Pin, GPIO_PIN_RESET);
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN1_Channel, 0);
+          __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.IN2_Channel, 0);
         }
     }
 
     self->setRPM = (float)setRPM;    // 更新目标转速 | update target RPM
-
-    __HAL_TIM_SET_COMPARE(self->Init.htim, self->Init.Channel, abs(setRPM));
-    // 设置 PWM 占空比 | set PWM duty = |RPM|
 }

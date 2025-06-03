@@ -11,29 +11,19 @@
 #include "struct_typedef.h"
 
 /* 硬件配置宏定义 | Hardware configuration macros */
-// 电机 PWM 定时器 | Motor PWM timer
-#define MOTOR_TIM        htim2
-// 左电机 PWM 通道 | Left motor PWM channel
-#define MOTOR_L_CHANNEL  TIM_CHANNEL_1
-// 左电机 IN1 引脚端口 | Left motor IN1 GPIO port
-#define MOTOR_L_IN1_PORT  DIN1_GPIO_Port
-// 左电机 IN1 引脚号 | Left motor IN1 GPIO pin
-#define MOTOR_L_IN1_PIN  DIN1_Pin
-// 左电机 IN2 引脚端口 | Left motor IN2 GPIO port
-#define MOTOR_L_IN2_PORT  DIN2_GPIO_Port
-// 左电机 IN2 引脚号 | Left motor IN2 GPIO pin
-#define MOTOR_L_IN2_PIN  DIN2_Pin
+// 左电机 PWM 定时器 | Motor PWM timer
+#define MOTOR_L_TIM        htim4
+// 左电机 IN1 通道 | Left motor IN1 channel
+#define MOTOR_L_IN1_CHANNEL  TIM_CHANNEL_1
+// 左电机 IN2 通道 | Left motor IN2 channel
+#define MOTOR_L_IN2_CHANNEL  TIM_CHANNEL_2
 
-// 右电机 PWM 通道 | Right motor PWM channel
-#define MOTOR_R_CHANNEL  TIM_CHANNEL_2
-// 右电机 IN1 引脚端口 | Right motor IN1 GPIO port
-#define MOTOR_R_IN1_PORT  AIN1_GPIO_Port
-// 右电机 IN1 引脚号 | Right motor IN1 GPIO pin
-#define MOTOR_R_IN1_PIN  AIN1_Pin
-// 右电机 IN2 引脚端口 | Right motor IN2 GPIO port
-#define MOTOR_R_IN2_PORT  AIN2_GPIO_Port
-// 右电机 IN2 引脚号 | Right motor IN2 GPIO pin
-#define MOTOR_R_IN2_PIN  AIN2_Pin
+// 右电机 PWM 定时器 | Motor PWM timer
+#define MOTOR_R_TIM        htim2
+// 右电机 IN1 通道 | Left motor IN1 channel
+#define MOTOR_R_IN1_CHANNEL  TIM_CHANNEL_1
+// 右电机 IN2 通道 | Left motor IN2 channel
+#define MOTOR_R_IN2_CHANNEL  TIM_CHANNEL_2
 
 // 左编码器定时器 | Left encoder timer
 #define ENCODER_L_TIM htim3

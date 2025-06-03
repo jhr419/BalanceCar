@@ -26,12 +26,9 @@
   */
 typedef struct {
     TIM_HandleTypeDef *htim;     /**< PWM 定时器句柄 | PWM timer handle */
-    uint32_t Channel;            /**< PWM 通道 | PWM channel */
-
-    GPIO_TypeDef *IN1_GPIOx;     /**< 方向控制 IN1 端口 | Direction control IN1 port */
-    uint16_t IN1_GPIO_Pin;       /**< 方向控制 IN1 引脚 | Direction control IN1 pin */
-    GPIO_TypeDef *IN2_GPIOx;     /**< 方向控制 IN2 端口 | Direction control IN2 port */
-    uint16_t IN2_GPIO_Pin;       /**< 方向控制 IN2 引脚 | Direction control IN2 pin */
+    uint32_t IN1_Channel;            /**< PWM 通道1 | PWM channel 1 */
+    uint32_t IN2_Channel;            /**< PWM 通道2 | PWM channel 2 */
+    uint32_t MAX_Counter;
 } Motor_InitTypeDef;
 
 /**

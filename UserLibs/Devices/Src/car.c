@@ -29,22 +29,18 @@ Car newCar(void) {
 
     // 左电机初始化参数 | Left motor init parameters
     Motor_InitTypeDef motor_l_Init = {
-            .htim         = &MOTOR_TIM,
-            .Channel      = MOTOR_L_CHANNEL,
-            .IN1_GPIOx    = MOTOR_L_IN1_PORT,
-            .IN1_GPIO_Pin = MOTOR_L_IN1_PIN,
-            .IN2_GPIOx    = MOTOR_L_IN2_PORT,
-            .IN2_GPIO_Pin = MOTOR_L_IN2_PIN
+            .htim         = &MOTOR_L_TIM,
+            .IN1_Channel  = MOTOR_L_IN1_CHANNEL,
+            .IN2_Channel  = MOTOR_L_IN2_CHANNEL,
+            .MAX_Counter  = MOTOR_L_TIM.Init.Period + 1
     };
 
     // 右电机初始化参数 | Right motor init parameters
     Motor_InitTypeDef motor_r_Init = {
-            .htim         = &MOTOR_TIM,
-            .Channel      = MOTOR_R_CHANNEL,
-            .IN1_GPIOx    = MOTOR_R_IN1_PORT,
-            .IN1_GPIO_Pin = MOTOR_R_IN1_PIN,
-            .IN2_GPIOx    = MOTOR_R_IN2_PORT,
-            .IN2_GPIO_Pin = MOTOR_R_IN2_PIN
+            .htim         = &MOTOR_R_TIM,
+            .IN1_Channel  = MOTOR_R_IN1_CHANNEL,
+            .IN2_Channel  = MOTOR_R_IN2_CHANNEL,
+            .MAX_Counter  = MOTOR_R_TIM.Init.Period + 1
     };
 
     // 创建左右电机对象 | Create motor instances
